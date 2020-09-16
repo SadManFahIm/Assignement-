@@ -1,0 +1,203 @@
+#include<windows.h>
+#include<GL/glut.h>
+
+void display(){
+
+    glClearColor(1.0f,1.0f,1.0f,1.0f);
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    //Main quad
+    glColor3ub(137,138,141);
+    glBegin(GL_QUADS);
+    glVertex2f(-.6,.4);
+    glVertex2f(-.6,-.4);
+    glVertex2f(.8,-.4);
+    glVertex2f(.8,.4);
+    glEnd();
+
+    //Entry
+    glColor3ub(102,98,98);
+    glBegin(GL_QUADS);
+    glVertex2f(-.6,-.4);
+    glVertex2f(-.6,-.6);
+    glVertex2f(.8,-.6);
+    glVertex2f(.8,-.4);
+    glEnd();
+
+    //Left bend
+    glColor3ub(40,41,36);
+    glBegin(GL_QUADS);
+    glVertex2f(-.6,.4);
+    glVertex2f(-.6,-.6);
+    glVertex2f(-.8,-.6);
+    glVertex2f(-.8,.3);
+    glEnd();
+
+    glColor3ub(68,68,62);
+    glBegin(GL_QUADS);
+    glVertex2f(-.8,-.6);
+    glVertex2f(-.6,-.6);
+    glVertex2f(-.6,-.7);
+    glVertex2f(-.8,-.7);
+    glEnd();
+
+    //Stairs
+    glColor3ub(207,196,155);
+    glBegin(GL_QUADS);
+    glVertex2f(-.6,-.6);
+    glVertex2f(.5,-.6);
+    glVertex2f(.5,-.7);
+    glVertex2f(-.6,-.7);
+    glEnd();
+
+    //Parking
+    glColor3ub(100,100,80);
+    glBegin(GL_QUADS);
+    glVertex2f(.5,-.7);
+    glVertex2f(.8,-.7);
+    glVertex2f(.8,-.5);
+    glVertex2f(.5,-.5);
+    glEnd();
+
+    //Windows
+    glColor3ub(79,88,200);
+    glBegin(GL_QUADS);
+    glVertex2f(-.5,.3);
+    glVertex2f(.7,.3);
+    glVertex2f(.7,.2);
+    glVertex2f(-.5,.2);
+    glEnd();
+
+    glColor3ub(79,88,200);
+    glBegin(GL_QUADS);
+    glVertex2f(-.5,.1);
+    glVertex2f(.7,.1);
+    glVertex2f(.7,0);
+    glVertex2f(-.5,0);
+    glEnd();
+
+    glColor3ub(79,88,200);
+    glBegin(GL_QUADS);
+    glVertex2f(-.5,-.1);
+    glVertex2f(.7,-.1);
+    glVertex2f(.7,-.2);
+    glVertex2f(-.5,-.2);
+    glEnd();
+
+    glColor3ub(79,88,200);
+    glBegin(GL_QUADS);
+    glVertex2f(-.5,-.25);
+    glVertex2f(.7,-.25);
+    glVertex2f(.7,-.35);
+    glVertex2f(-.5,-.35);
+    glEnd();
+
+    //Logo plate
+    glColor3ub(175,175,174);
+    glBegin(GL_QUADS);
+    glVertex2f(-.6,.7);
+    glVertex2f(.4,.7);
+    glVertex2f(.4,.4);
+    glVertex2f(-.6,.4);
+    glEnd();
+    //A
+    glBegin(GL_LINES);
+    glColor3f(0,0,1);
+    glVertex2f(-.5,.42);
+    glVertex2f(-.4,.68);
+    glEnd();
+
+    glBegin(GL_LINES);
+    glColor3f(0,0,1);
+    glVertex2f(-.4,.68);
+    glVertex2f(-.3,.42);
+    glEnd();
+
+    glBegin(GL_LINES);
+    glColor3f(0,0,1);
+    glVertex2f(-.45,.55);
+    glVertex2f(-.35,.55);
+    glEnd();
+
+    //I
+    glBegin(GL_LINES);
+    glColor3f(0,0,1);
+    glVertex2f(-.2,.42);
+    glVertex2f(-.2,.68);
+    glEnd();
+
+    glBegin(GL_LINES);
+    glColor3f(0,0,1);
+    glVertex2f(-.25,.42);
+    glVertex2f(-.15,.42);
+    glEnd();
+
+    glBegin(GL_LINES);
+    glColor3f(0,0,1);
+    glVertex2f(-.25,.68);
+    glVertex2f(-.15,.68);
+    glEnd();
+
+    //U
+    glBegin(GL_LINES);
+    glColor3f(0,0,1);
+    glVertex2f(-.1,.42);
+    glVertex2f(-.1,.68);
+    glEnd();
+
+    glBegin(GL_LINES);
+    glColor3f(0,0,1);
+    glVertex2f(-.1,.42);
+    glVertex2f(.1,.42);
+    glEnd();
+
+    glBegin(GL_LINES);
+    glColor3f(0,0,1);
+    glVertex2f(.1,.42);
+    glVertex2f(.1,.68);
+    glEnd();
+
+    //B
+    glBegin(GL_LINES);
+    glColor3f(0,0,1);
+    glVertex2f(.2,.42);
+    glVertex2f(.2,.68);
+    glEnd();
+
+    glBegin(GL_LINES);
+    glColor3f(0,0,1);
+    glVertex2f(.2,.42);
+    glVertex2f(.3,.49);
+    glEnd();
+
+    glBegin(GL_LINES);
+    glColor3f(0,0,1);
+    glVertex2f(.3,.49);
+    glVertex2f(.2,.56);
+    glEnd();
+
+    glBegin(GL_LINES);
+    glColor3f(0,0,1);
+    glVertex2f(.2,.56);
+    glVertex2f(.3,.63);
+    glEnd();
+
+    glBegin(GL_LINES);
+    glColor3f(0,0,1);
+    glVertex2f(.2,.68);
+    glVertex2f(.3,.63);
+    glEnd();
+
+    glFlush();
+}
+
+int main(int argc,char** argv){
+
+    glutInit(&argc,argv);
+    glutCreateWindow("D_Building");
+    glutInitWindowSize(300,400);
+    glutDisplayFunc(display);
+    glutMainLoop();
+
+    return 0;
+}
