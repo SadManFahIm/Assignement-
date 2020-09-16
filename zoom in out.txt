@@ -1,0 +1,95 @@
+
+
+#include <GL/gl.h>
+#include <GL/glut.h>
+
+void init() {
+   glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+}
+
+void SpecialInput(int key, int x, int y)
+{
+switch(key)
+{
+case GLUT_KEY_UP:
+//do something here
+   glLoadIdentity();
+
+
+gluOrtho2D(-1.0f,-.7f,-1.f,1.0f);//left,right,bottom.top
+
+//glutTimerFunc(100, update2, 0);
+break;
+case GLUT_KEY_DOWN:
+
+   glLoadIdentity();
+
+
+gluOrtho2D(.7f,1.f,-1.f,1.0f);//left,right,bottom.top
+break;
+case GLUT_KEY_LEFT:
+glLoadIdentity();
+gluOrtho2D(-.8f,-.4f,-.9f,-.1f);
+
+break;
+case GLUT_KEY_RIGHT:
+    glLoadIdentity();
+gluOrtho2D(.2f,.7f,-.9f,-.3f);
+
+break;
+}
+glutPostRedisplay();
+}
+void display() {
+   glClear(GL_COLOR_BUFFER_BIT);
+
+
+
+
+
+	glBegin(GL_LINES);              // Each set of 4 vertices form a quad
+	glColor3f(0.0f, 1.0f, 0.0f); // Red
+	glVertex2f(-.8f, 0.9f);    // x, y
+	glVertex2f(-.9f, 0.9f);    // x, y
+   glEnd();
+
+
+	glBegin(GL_LINES);              // Each set of 4 vertices form a quad
+	glColor3f(1.0f, 0.0f, 0.0f); // Red
+	glVertex2f(.8f, 0.9f);    // x, y
+	glVertex2f(.9f, 0.9f);    // x, y
+   glEnd();
+
+   glBegin(GL_QUADS);
+   glColor3f(1.0,0.0,0.0);
+   glVertex2f(-.7,-.8);
+   glVertex2f(-.5,-.8);
+   glVertex2f(-.5,-.4);
+   glVertex2f(-.7,-.4);
+   glEnd();
+
+   glBegin(GL_TRIANGLES);
+   glColor3f(1.0,0.0,0.0);
+   glVertex2f(.3,-.8);
+   glVertex2f(.5,-.8);
+   glVertex2f(.25,-.4);
+   glEnd();
+
+
+   glFlush();
+}
+
+
+
+int main(int argc, char** argv) {
+   glutInit(&argc, argv);
+   glutInitWindowSize(320, 320);
+   glutInitWindowPosition(50, 50);
+   glutCreateWindow("Basic Animation");
+   glutDisplayFunc(display);
+   init();
+   glutSpecialFunc(SpecialInput);
+
+   glutMainLoop();
+   return 0;
+}
